@@ -1,2 +1,2 @@
 # RosaJamaica
-Chat Menu
+Menu para Chat GPT
