@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rosa Jamaica - AI Assistant</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            background-color: #fffdf5; 
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            text-align: center;
+            color: #333;
+        }
+        .container {
+            padding: 20px;
+            max-width: 400px;
+        }
+        h1 {
+            color: #b22222; 
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+        p {
+            font-size: 1.1rem;
+            margin-bottom: 30px;
+            color: #555;
+        }
+        .btn-start {
+            background-color: #b22222;
+            color: white;
+            padding: 18px 45px;
+            font-size: 1.2rem;
+            font-weight: bold;
+            text-decoration: none;
+            border-radius: 50px;
+            display: inline-block;
+            box-shadow: 0 10px 20px rgba(178, 34, 34, 0.3);
+            transition: transform 0.2s;
+        }
+        .btn-start:active {
+            transform: scale(0.95);
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>ROSA JAMAICA</h1>
+        <p>¡Qué onda! Dale al botón para que nuestro chispudo de IA te ayude a elegir lo más chilero del menú.</p>
+        
+        <a id="chatLink" href="#" class="btn-start">
+            ¡HOLA, ROSA JAMAICA! 🌺
+        </a>
+    </div>
+
+    <script>
+        const invisibleSpace = "%E2%A0%80"; 
+        const lineBreak = "%0A";
+        const padding = (invisibleSpace + lineBreak).repeat(25); 
+
+        // Mensaje de bienvenida inicial en tono Chapín
+        const welcomeMessage = "%C2%A1Qu%C3%A9%20onda!%20Bienvenido%20a%20Rosa%20Jamaica%20%F0%9F%8C%BA%0ASoy%20tu%20anfitri%C3%B3n%20virtual.%20Presion%C3%A1%20arriba%20para%20que%20empecemos%20a%20ver%20qu%C3%A9%20pedimos...";
+        
+        // Instrucciones internas (Tono Guatemalteco / Chapín)
+        const internalInstructions = "System%20Order%3A%20Act%20as%20the%20official%20Rosa%20Jamaica%20assistant.%20LANGUAGE%3A%20Guatemalan%20Spanish%20(Chap%C3%ADn).%20MENU%20LINK%3A%20https%3A%2F%2Fmenu-chat.github.io%2FRosaJamaica%2FMenuRosaJamaica.html.%20RULES%3A%201.%20LOOP%3A%20Check%20the%20menu%20link%20before%20answering.%202.%20STRICT%20MENU%3A%20Only%20recommend%20items%20from%20the%20menu.%203.%20FLOW%3A%20Ask%20one%20question%20at%20a%20time.%204.%20STEPS%3A%20Ask%20for%20mood%2C%20then%20dietary%20restrictions%2C%20then%20drinks.%205.%20FINAL%20STEP%3A%20Recommend%20something%20calidad%20based%20on%20the%20beach%20vibe.%206.%20Style%3A%20Friendly%2C%20informal%2C%20use%20slang%20like%20'chilero'%2C%20'calidad'%2C%20'qu%C3%A9%20onda'%2C%20'mano'%2C%20'much%C3%A1'%2C%20'pilas'.%20Use%20voseo%20(vos).";
+
+        const finalUrl = "https://chatgpt.com/?prompt=" + welcomeMessage + padding + internalInstructions + padding + welcomeMessage;
+
+        document.getElementById('chatLink').href = finalUrl;
+    </script>
+</body>
+</html>
